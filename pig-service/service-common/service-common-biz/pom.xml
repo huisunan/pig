@@ -9,7 +9,7 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>jar</packaging>
-	<artifactId>service-common-api</artifactId>
+	<artifactId>service-common-biz</artifactId>
 
 	<properties>
 		<maven.compiler.source>8</maven.compiler.source>
@@ -17,20 +17,32 @@
 	</properties>
 
 	<dependencies>
-		<!--feign 依赖-->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
-		</dependency>
-		<!--断路器依赖-->
 		<dependency>
 			<groupId>com.pig4cloud</groupId>
-			<artifactId>pig-common-feign</artifactId>
+			<artifactId>service-common-api</artifactId>
+			<version>3.4.7</version>
 		</dependency>
-		<!--core 工具类-->
+		<!--注册中心客户端-->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+		</dependency>
+		<!--配置中心客户端-->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+		</dependency>
+		<!--undertow容器-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-undertow</artifactId>
+		</dependency>
+		<!--日志处理-->
 		<dependency>
 			<groupId>com.pig4cloud</groupId>
-			<artifactId>pig-common-core</artifactId>
+			<artifactId>pig-common-log</artifactId>
 		</dependency>
+
 	</dependencies>
+
 </project>
