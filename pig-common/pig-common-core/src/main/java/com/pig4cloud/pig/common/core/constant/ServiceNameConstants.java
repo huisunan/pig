@@ -32,4 +32,8 @@ public interface ServiceNameConstants {
 	 */
 	String UMPS_SERVICE = "pig-upms-biz";
 
+	/**
+	 * 公共服务
+	 */
+	String COMMON_SERVICE = "common-service";
 }
