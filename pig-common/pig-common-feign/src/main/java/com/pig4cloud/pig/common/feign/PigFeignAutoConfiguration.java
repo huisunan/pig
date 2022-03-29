@@ -19,6 +19,7 @@ package com.pig4cloud.pig.common.feign;
 import com.alibaba.cloud.sentinel.feign.SentinelFeignAutoConfiguration;
 import com.alibaba.csp.sentinel.adapter.spring.webmvc.callback.BlockExceptionHandler;
 import com.alibaba.csp.sentinel.adapter.spring.webmvc.callback.RequestOriginParser;
+import com.pig4cloud.pig.common.feign.security.SecurityInterceptor;
 import com.pig4cloud.pig.common.feign.sentinel.ext.PigSentinelFeign;
 import com.pig4cloud.pig.common.feign.sentinel.handle.PigUrlBlockHandler;
 import com.pig4cloud.pig.common.feign.sentinel.parser.PigHeaderRequestOriginParser;
@@ -60,4 +61,8 @@ public class PigFeignAutoConfiguration {
 		return new PigHeaderRequestOriginParser();
 	}
 
+	@Bean
+	public SecurityInterceptor securityInterceptor(){
+		return new SecurityInterceptor();
+	}
 }

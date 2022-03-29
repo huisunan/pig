@@ -39,7 +39,7 @@ public class SysLogListener {
 	@EventListener(SysLogEvent.class)
 	public void saveSysLog(SysLogEvent event) {
 		SysLog sysLog = (SysLog) event.getSource();
-		remoteLogService.saveLog(sysLog, SecurityConstants.FROM_IN);
+		remoteLogService.saveLog(sysLog);
 	}
 
 }

@@ -45,7 +45,7 @@ public class TokenController {
 	 */
 	@GetMapping("/page")
 	public R token(@RequestParam Map<String, Object> params) {
-		return remoteTokenService.getTokenPage(params, SecurityConstants.FROM_IN);
+		return remoteTokenService.getTokenPage(params);
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class TokenController {
 	@DeleteMapping("/{id}")
 	@PreAuthorize("@pms.hasPermission('sys_token_del')")
 	public R<Boolean> delete(@PathVariable String id) {
-		return remoteTokenService.removeToken(id, SecurityConstants.FROM_IN);
+		return remoteTokenService.removeToken(id);
 	}
 
 }
